@@ -13,12 +13,19 @@ public final class Ex2Client {
             PrintWriter out = new PrintWriter(socket.getOutputStream(),true);
             int inp1,inp2;
             byte[] list = new byte[100];
+            int[] list2=new int[100];
             for(int i=0;i<100;i++){
                 inp1=(br.read()* 16);
                 inp2=br.read();
                 list[i]=(byte) (inp1+inp2);
+                list2[i]=(inp1+inp2);
             }
-            CRC32 crc32 = new CRC32();
+            System.out.println("Received bytes:");
+            for(int i=0;i<100;i+=10){
+                System.out.println(" "+(Integer.toHexString(list2[i])+Integer.toHexString(list2[i+1])+Integer.toHexString(list2[i+2])+Integer.toHexString(list2[i+3])+Integer.toHexString(list2[i+4])
+                        +Integer.toHexString(list2[i+5])+Integer.toHexString(list2[i+6])+Integer.toHexString(list2[i+7])+Integer.toHexString(list2[i+8])+Integer.toHexString(list2[i+9])).toUpperCase());
+            }
+            CRC32 crc32  = new CRC32();
             crc32.update(list,0,list.length);;
             String hexRes = Integer.toHexString((int)crc32.getValue());
             System.out.println("Generated CRC32: "+hexRes);
@@ -28,12 +35,12 @@ public final class Ex2Client {
             list[2]=(byte) Integer.parseInt(hexRes.substring(4,6),16);
             list[3]=(byte) Integer.parseInt(hexRes.substring(6),16);
             for(int i=0;i<list.length;i++){
-                out.println(list[i]);
+               out.println(list[i]);
             }
             if(br.read()==1)
-                System.out.println("Response good");
+                System.out.println("Response good.");
             else
-                System.out.println("Response bad");
+                System.out.println("Response bad.");
             is.close();
             isr.close();
             br.close();
