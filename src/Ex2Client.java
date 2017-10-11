@@ -22,7 +22,11 @@ public final class Ex2Client {
             crc32.update(list,0,list.length);;
             String hexRes = Integer.toHexString((int)crc32.getValue());
             System.out.println("Generated CRC32: "+hexRes);
-            list = hexStringToByteArray(hexRes);
+            list = new byte[4];
+            list[0]=(byte) Integer.parseInt(hexRes.substring(0,2),16);
+            list[1]=(byte) Integer.parseInt(hexRes.substring(2,4),16);
+            list[2]=(byte) Integer.parseInt(hexRes.substring(4,6),16);
+            list[3]=(byte) Integer.parseInt(hexRes.substring(6),16);
             for(int i=0;i<list.length;i++){
                 out.println(list[i]);
             }
@@ -37,14 +41,5 @@ public final class Ex2Client {
             socket.close();
             System.out.println("Disconnected from server.");
         }
-    }
-    public static byte[] hexStringToByteArray(String s) {
-        int len = s.length();
-        byte[] data = new byte[len / 2];
-        for (int i = 0; i < len; i += 2) {
-            data[i / 2] = (byte) ((Character.digit(s.charAt(i), 16) << 4)
-                    + Character.digit(s.charAt(i+1), 16));
-        }
-        return data;
     }
 }
