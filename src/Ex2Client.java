@@ -1,6 +1,7 @@
 import java.io.*;
 import java.net.Socket;
 import java.util.zip.CRC32;
+import java.nio.ByteBuffer;
 
 public final class Ex2Client {
     public static void main(String[] args) throws Exception {
@@ -14,22 +15,15 @@ public final class Ex2Client {
             String cast1,cast2;
             byte[] list = new byte[100];
             for(int i=0;i<100;i++){
-                inp1=br.read();
-              //  cast1= ""+inp1;
+                inp1=(br.read()* 16);
                 inp2=br.read();
-              //  cast2= ""+inp2;
-                byte t1 = (byte) inp1;
-   //             System.out.println(inp1+","+t1);
-                byte t2 = (byte) inp2;
-            //    System.out.println(inp2+","+t2);
-                list[i]=(byte) (t1+t2);
-           //     System.out.println((byte) (t1+t2));
+                list[i]=(byte) (inp1+inp2);
             }
             CRC32 crc32 = new CRC32();
-            crc32.update(list);
+            crc32.update(list,0,list.length);
             System.out.println(crc32.getValue());
-            System.out.println((byte) crc32.getValue());
-            out.println(crc32.getValue());
+            String hexRes = Integer.toHexString((int)crc32.getValue());
+            System.out.println(hexRes);
             if(br.read()==1)
                 System.out.println("Response good");
             else
