@@ -19,8 +19,8 @@
       <file leaf-file-name="Ex2Client.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Ex2Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="30" column="20" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="20" />
+            <state relative-caret-position="196">
+              <caret line="20" column="48" lean-forward="true" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -50,16 +50,17 @@
       <list>
         <option value="$PROJECT_DIR$/src/DF.java" />
         <option value="$PROJECT_DIR$/src/fsad.java" />
-        <option value="$PROJECT_DIR$/src/Ex2Client1.java" />
+        <option value="$PROJECT_DIR$/src/da.java" />
         <option value="$PROJECT_DIR$/src/Ex2Client.java" />
+        <option value="$PROJECT_DIR$/src/Ex2Client1.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-4" />
-    <option name="y" value="-21" />
-    <option name="width" value="1936" />
-    <option name="height" value="1096" />
+    <option name="x" value="-16" />
+    <option name="y" value="-16" />
+    <option name="width" value="1932" />
+    <option name="height" value="1085" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -115,7 +116,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Ex2Client">
+  <component name="RunManager" selected="Application.Ex2Client1">
     <configuration name="DF" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="DF" />
@@ -238,6 +239,20 @@
       <properties />
       <listeners />
     </configuration>
+    <configuration name="da" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="da" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="02" />
+      <envs />
+    </configuration>
     <configuration name="fsad" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="fsad" />
@@ -252,18 +267,20 @@
       <module name="02" />
       <envs />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.Ex2Client" />
       <item index="1" class="java.lang.String" itemvalue="Application.DF" />
       <item index="2" class="java.lang.String" itemvalue="Application.fsad" />
       <item index="3" class="java.lang.String" itemvalue="Application.Ex2Client1" />
+      <item index="4" class="java.lang.String" itemvalue="Application.da" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Application.Ex2Client" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Ex2Client1" />
-        <item index="2" class="java.lang.String" itemvalue="Application.fsad" />
-        <item index="3" class="java.lang.String" itemvalue="Application.DF" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Application.Ex2Client1" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Ex2Client" />
+        <item index="2" class="java.lang.String" itemvalue="Application.da" />
+        <item index="3" class="java.lang.String" itemvalue="Application.fsad" />
+        <item index="4" class="java.lang.String" itemvalue="Application.DF" />
       </list>
     </recent_temporary>
   </component>
@@ -363,14 +380,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ex2Client1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="16" column="226" lean-forward="false" selection-start-line="16" selection-start-column="226" selection-end-line="16" selection-end-column="226" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/02.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -379,10 +388,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/da.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="54" lean-forward="false" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ex2Client1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ex2Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="30" column="20" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="20" />
+        <state relative-caret-position="196">
+          <caret line="20" column="48" lean-forward="true" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

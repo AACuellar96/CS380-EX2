@@ -13,17 +13,24 @@ public final class Ex2Client {
             PrintWriter out = new PrintWriter(socket.getOutputStream(),true);
             int inp1,inp2;
             byte[] list = new byte[100];
-            int[] list2=new int[100];
+            int[] list2=new int[200];
+            int j=0;
             for(int i=0;i<100;i++){
-                inp1=(br.read()* 16);
+                inp1=br.read();
                 inp2=br.read();
-                list[i]=(byte) (inp1+inp2);
-                list2[i]=(inp1+inp2);
+                list[i]=(byte) ((inp1*16)+inp2);
+                list2[j]=inp1;
+                j++;
+                list2[j]=inp2;
+                j++;
             }
             System.out.println("Received bytes:");
-            for(int i=0;i<100;i+=10){
+            for(int i=0;i<200;i+=20){
                 System.out.println(" "+(Integer.toHexString(list2[i])+Integer.toHexString(list2[i+1])+Integer.toHexString(list2[i+2])+Integer.toHexString(list2[i+3])+Integer.toHexString(list2[i+4])
-                        +Integer.toHexString(list2[i+5])+Integer.toHexString(list2[i+6])+Integer.toHexString(list2[i+7])+Integer.toHexString(list2[i+8])+Integer.toHexString(list2[i+9])).toUpperCase());
+                        +Integer.toHexString(list2[i+5])+Integer.toHexString(list2[i+6])+Integer.toHexString(list2[i+7])+Integer.toHexString(list2[i+8])+Integer.toHexString(list2[i+9])+
+                        Integer.toHexString(list2[i+10])+Integer.toHexString(list2[i+11])+Integer.toHexString(list2[i+12])+Integer.toHexString(list2[i+13])
+                        +Integer.toHexString(list2[i+14])+Integer.toHexString(list2[i+15])+Integer.toHexString(list2[i+16])
+                        +Integer.toHexString(list2[i+17])+Integer.toHexString(list2[i+18])+Integer.toHexString(list2[i+19])).toUpperCase());
             }
             CRC32 crc32  = new CRC32();
             crc32.update(list,0,list.length);;
