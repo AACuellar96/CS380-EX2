@@ -10,10 +10,10 @@ public final class Ex2Client {
             InputStreamReader isr = new InputStreamReader(is, "UTF-8");
             BufferedReader br = new BufferedReader(isr);
             BufferedReader brIS = new BufferedReader(new InputStreamReader(System.in));
-            PrintWriter out = new PrintWriter(socket.getOutputStream(),true);
+            PrintStream out = new PrintStream((socket.getOutputStream()),true,"UTF-8");
             int inp1,inp2;
             byte[] list = new byte[100];
-            int[] list2=new int[200];
+            int[] list2 = new int[200];
             int j=0;
             for(int i=0;i<100;i++){
                 inp1=br.read();
@@ -35,15 +35,21 @@ public final class Ex2Client {
             CRC32 crc32  = new CRC32();
             crc32.update(list,0,list.length);;
             String hexRes = Integer.toHexString((int)crc32.getValue());
-            System.out.println("Generated CRC32: "+hexRes);
+            System.out.println("Generated CRC32: "+hexRes.toUpperCase());
             list = new byte[4];
-            list[0]=(byte) Integer.parseInt(hexRes.substring(0,2),16);
-            list[1]=(byte) Integer.parseInt(hexRes.substring(2,4),16);
-            list[2]=(byte) Integer.parseInt(hexRes.substring(4,6),16);
-            list[3]=(byte) Integer.parseInt(hexRes.substring(6),16);
-            for(int i=0;i<list.length;i++){
-               out.println(list[i]);
+            if(hexRes.length()>7){
+                list[0]=(byte) Integer.parseInt(hexRes.substring(0,2).toUpperCase(),16);
+                list[1]=(byte) Integer.parseInt(hexRes.substring(2,4).toUpperCase(),16);
+                list[2]=(byte) Integer.parseInt(hexRes.substring(4,6).toUpperCase(),16);
+                list[3]=(byte) Integer.parseInt(hexRes.substring(6).toUpperCase(),16);
             }
+            else{
+                list[0]=(byte) Integer.parseInt(hexRes.substring(0,1).toUpperCase(),16);
+                list[1]=(byte) Integer.parseInt(hexRes.substring(1,3).toUpperCase(),16);
+                list[2]=(byte) Integer.parseInt(hexRes.substring(3,5).toUpperCase(),16);
+                list[3]=(byte) Integer.parseInt(hexRes.substring(5).toUpperCase(),16);
+            }
+            out.write(list);
             if(br.read()==1)
                 System.out.println("Response good.");
             else
